@@ -1,0 +1,517 @@
+# Logfile created on Fri Jan 09 12:25:06 +0900 2009 by /
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: schema_migrations: SELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (21.4ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (5.4ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('1')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "memberships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "group_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('2')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "accessibilities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "blog_id" integer, "group_id" integer) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "blogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: schema_migrations: SELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('1')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "memberships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "group_id" integer) [0m
+  [4;35;1mSQL (2.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('2')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "accessibilities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "blog_id" integer, "group_id" integer) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "blogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: schema_migrations: SELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('1')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "memberships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "group_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('2')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "accessibilities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "blog_id" integer, "group_id" integer) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "blogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: schema_migrations: SELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('1')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "memberships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "group_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('2')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255)) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "accessibilities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "blog_id" integer, "group_id" integer) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "blogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: schema_migrations: SELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('1')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "memberships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "group_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('2')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "accessibilities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "blog_id" integer, "group_id" integer) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "blogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('alice', '2009-01-09 12:28:45', '2009-01-09 12:28:45')[0m
+  [4;35;1mGroup Create (0.1ms)[0m   [0mINSERT INTO "groups" ("name") VALUES('collaborators')[0m
+  [4;36;1mBlog Create (0.2ms)[0m   [0;1mINSERT INTO "blogs" ("created_at", "title", "updated_at") VALUES('2009-01-09 12:28:45', 'My Blog', '2009-01-09 12:28:45')[0m
+  [4;35;1mAccessibility Create (0.1ms)[0m   [0mINSERT INTO "accessibilities" ("blog_id", "group_id") VALUES(1, 1)[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("group_id", "user_id") VALUES(1, 1)[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."name" = 'alice') LIMIT 1[0m
+  [4;36;1mUser Create (0.1ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('bob', '2009-01-09 12:28:45', '2009-01-09 12:28:45')[0m
+  [4;35;1mBlog Load (0.2ms)[0m   [0mSELECT * FROM "blogs" LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."name" = 'alice') LIMIT 1[0m
+  [4;35;1mUser Create (0.1ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('bob', '2009-01-09 12:28:45', '2009-01-09 12:28:45')[0m
+  [4;36;1mBlog Load (0.2ms)[0m   [0;1mSELECT * FROM "blogs" LIMIT 1[0m
+  [4;35;1mBlog Load (2.2ms)[0m   [0mSELECT * FROM "blogs" WHERE ("blogs".id IN (SELECT "accessibilities".blog_id FROM "accessibilities" JOIN "memberships" ON "memberships".group_id = "accessibilities".group_id WHERE "memberships".user_id IN (1))) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."name" = 'alice') LIMIT 1[0m
+  [4;35;1mUser Create (3.2ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('bob', '2009-01-09 12:28:45', '2009-01-09 12:28:45')[0m
+  [4;36;1mBlog Load (1.0ms)[0m   [0;1mSELECT * FROM "blogs" LIMIT 1[0m
+  [4;35;1mAccessibility Load (1.9ms)[0m   [0mSELECT "accessibilities".* FROM "accessibilities" JOIN "memberships" ON "memberships".group_id = "accessibilities".group_id WHERE ("memberships".user_id = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."name" = 'alice') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('bob', '2009-01-09 12:28:45', '2009-01-09 12:28:45')[0m
+  [4;36;1mBlog Load (0.3ms)[0m   [0;1mSELECT * FROM "blogs" LIMIT 1[0m
+  [4;35;1mBlog Load (1.3ms)[0m   [0mSELECT * FROM "blogs" WHERE ("blogs".id IN (SELECT "accessibilities".blog_id FROM "accessibilities" JOIN "memberships" ON "memberships".group_id = "accessibilities".group_id WHERE "memberships".user_id IN (5))) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."name" = 'alice') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('bob', '2009-01-09 12:28:45', '2009-01-09 12:28:45')[0m
+  [4;36;1mBlog Load (0.2ms)[0m   [0;1mSELECT * FROM "blogs" LIMIT 1[0m
+  [4;35;1mAccessibility Load (0.1ms)[0m   [0mSELECT "accessibilities".* FROM "accessibilities" JOIN "memberships" ON "memberships".group_id = "accessibilities".group_id WHERE ("memberships".user_id = 6) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: schema_migrations: SELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('1')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "memberships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "group_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('2')[0m
+  [4;36;1mSQL (7.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255)) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "accessibilities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "blog_id" integer, "group_id" integer) [0m
+  [4;36;1mSQL (3.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "blogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('alice', '2009-01-09 13:12:47', '2009-01-09 13:12:47')[0m
+  [4;35;1mGroup Create (0.1ms)[0m   [0mINSERT INTO "groups" ("name") VALUES('collaborators')[0m
+  [4;36;1mBlog Create (0.2ms)[0m   [0;1mINSERT INTO "blogs" ("created_at", "title", "updated_at") VALUES('2009-01-09 13:12:47', 'My Blog', '2009-01-09 13:12:47')[0m
+  [4;35;1mAccessibility Create (0.2ms)[0m   [0mINSERT INTO "accessibilities" ("blog_id", "group_id") VALUES(1, 1)[0m
+  [4;36;1mMembership Create (0.2ms)[0m   [0;1mINSERT INTO "memberships" ("group_id", "user_id") VALUES(1, 1)[0m
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."name" = 'alice') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('bob', '2009-01-09 13:12:47', '2009-01-09 13:12:47')[0m
+  [4;35;1mBlog Load (0.4ms)[0m   [0mSELECT * FROM "blogs" LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."name" = 'alice') LIMIT 1[0m
+  [4;35;1mUser Create (0.1ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('bob', '2009-01-09 13:12:47', '2009-01-09 13:12:47')[0m
+  [4;36;1mBlog Load (0.2ms)[0m   [0;1mSELECT * FROM "blogs" LIMIT 1[0m
+  [4;35;1mBlog Load (3.8ms)[0m   [0mSELECT * FROM "blogs" WHERE ("blogs".id IN (SELECT "accessibilities".blog_id FROM "accessibilities" JOIN "memberships" ON "memberships".group_id = "accessibilities".group_id WHERE "memberships".user_id IN (1))) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."name" = 'alice') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('bob', '2009-01-09 13:12:47', '2009-01-09 13:12:47')[0m
+  [4;36;1mBlog Load (0.2ms)[0m   [0;1mSELECT * FROM "blogs" LIMIT 1[0m
+  [4;35;1mAccessibility Load (0.2ms)[0m   [0mSELECT "accessibilities".* FROM "accessibilities" JOIN "memberships" ON "memberships".group_id = "accessibilities".group_id WHERE ("memberships".user_id = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."name" = 'alice') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('bob', '2009-01-09 13:12:47', '2009-01-09 13:12:47')[0m
+  [4;36;1mBlog Load (0.4ms)[0m   [0;1mSELECT * FROM "blogs" LIMIT 1[0m
+  [4;35;1mBlog Load (1.1ms)[0m   [0mSELECT * FROM "blogs" WHERE ("blogs".id IN (SELECT "accessibilities".blog_id FROM "accessibilities" JOIN "memberships" ON "memberships".group_id = "accessibilities".group_id WHERE "memberships".user_id IN (5))) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."name" = 'alice') LIMIT 1[0m
+  [4;35;1mUser Create (0.1ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('bob', '2009-01-09 13:12:47', '2009-01-09 13:12:47')[0m
+  [4;36;1mBlog Load (0.2ms)[0m   [0;1mSELECT * FROM "blogs" LIMIT 1[0m
+  [4;35;1mAccessibility Load (0.2ms)[0m   [0mSELECT "accessibilities".* FROM "accessibilities" JOIN "memberships" ON "memberships".group_id = "accessibilities".group_id WHERE ("memberships".user_id = 6) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: schema_migrations: SELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('1')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "memberships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "group_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('2')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255)) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "accessibilities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "blog_id" integer, "group_id" integer) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "blogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mUser Create (0.1ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('alice', '2009-01-09 13:12:59', '2009-01-09 13:12:59')[0m
+  [4;35;1mGroup Create (0.2ms)[0m   [0mINSERT INTO "groups" ("name") VALUES('collaborators')[0m
+  [4;36;1mBlog Create (0.6ms)[0m   [0;1mINSERT INTO "blogs" ("created_at", "title", "updated_at") VALUES('2009-01-09 13:12:59', 'My Blog', '2009-01-09 13:12:59')[0m
+  [4;35;1mAccessibility Create (2.3ms)[0m   [0mINSERT INTO "accessibilities" ("blog_id", "group_id") VALUES(1, 1)[0m
+  [4;36;1mMembership Create (0.5ms)[0m   [0;1mINSERT INTO "memberships" ("group_id", "user_id") VALUES(1, 1)[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."name" = 'alice') LIMIT 1[0m
+  [4;36;1mUser Create (0.1ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('bob', '2009-01-09 13:12:59', '2009-01-09 13:12:59')[0m
+  [4;35;1mBlog Load (0.2ms)[0m   [0mSELECT * FROM "blogs" LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."name" = 'alice') LIMIT 1[0m
+  [4;35;1mUser Create (0.1ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('bob', '2009-01-09 13:12:59', '2009-01-09 13:12:59')[0m
+  [4;36;1mBlog Load (0.3ms)[0m   [0;1mSELECT * FROM "blogs" LIMIT 1[0m
+  [4;35;1mBlog Load (4.5ms)[0m   [0mSELECT * FROM "blogs" WHERE ("blogs".id IN (SELECT "accessibilities".blog_id FROM "accessibilities" JOIN "memberships" ON "memberships".group_id = "accessibilities".group_id WHERE "memberships".user_id IN (1))) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."name" = 'alice') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('bob', '2009-01-09 13:12:59', '2009-01-09 13:12:59')[0m
+  [4;36;1mBlog Load (0.2ms)[0m   [0;1mSELECT * FROM "blogs" LIMIT 1[0m
+  [4;35;1mAccessibility Load (0.3ms)[0m   [0mSELECT "accessibilities".* FROM "accessibilities" JOIN "memberships" ON "memberships".group_id = "accessibilities".group_id WHERE ("memberships".user_id = 1) [0m
+  [4;36;1mUser Load (2.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."name" = 'alice') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('bob', '2009-01-09 13:12:59', '2009-01-09 13:12:59')[0m
+  [4;36;1mBlog Load (0.2ms)[0m   [0;1mSELECT * FROM "blogs" LIMIT 1[0m
+  [4;35;1mBlog Load (1.4ms)[0m   [0mSELECT * FROM "blogs" WHERE ("blogs".id IN (SELECT "accessibilities".blog_id FROM "accessibilities" JOIN "memberships" ON "memberships".group_id = "accessibilities".group_id WHERE "memberships".user_id IN (5))) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."name" = 'alice') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('bob', '2009-01-09 13:12:59', '2009-01-09 13:12:59')[0m
+  [4;36;1mBlog Load (0.3ms)[0m   [0;1mSELECT * FROM "blogs" LIMIT 1[0m
+  [4;35;1mAccessibility Load (1.3ms)[0m   [0mSELECT "accessibilities".* FROM "accessibilities" JOIN "memberships" ON "memberships".group_id = "accessibilities".group_id WHERE ("memberships".user_id = 6) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: schema_migrations: SELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('1')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "memberships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "group_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('2')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255)) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCREATE TABLE "accessibilities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "blog_id" integer, "group_id" integer) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "blogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('alice', '2009-01-09 13:39:45', '2009-01-09 13:39:45')[0m
+  [4;35;1mGroup Create (0.1ms)[0m   [0mINSERT INTO "groups" ("name") VALUES('collaborators')[0m
+  [4;36;1mBlog Create (0.1ms)[0m   [0;1mINSERT INTO "blogs" ("created_at", "title", "updated_at") VALUES('2009-01-09 13:39:45', 'My Blog', '2009-01-09 13:39:45')[0m
+  [4;35;1mAccessibility Create (0.1ms)[0m   [0mINSERT INTO "accessibilities" ("blog_id", "group_id") VALUES(1, 1)[0m
+  [4;36;1mMembership Create (0.1ms)[0m   [0;1mINSERT INTO "memberships" ("group_id", "user_id") VALUES(1, 1)[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."name" = 'alice') LIMIT 1[0m
+  [4;36;1mUser Create (0.1ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('bob', '2009-01-09 13:39:45', '2009-01-09 13:39:45')[0m
+  [4;35;1mBlog Load (0.2ms)[0m   [0mSELECT * FROM "blogs" LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."name" = 'alice') LIMIT 1[0m
+  [4;35;1mUser Create (0.1ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('bob', '2009-01-09 13:39:45', '2009-01-09 13:39:45')[0m
+  [4;36;1mBlog Load (0.3ms)[0m   [0;1mSELECT * FROM "blogs" LIMIT 1[0m
+  [4;35;1mBlog Load (2.2ms)[0m   [0mSELECT * FROM "blogs" WHERE ("blogs".id IN (SELECT "accessibilities".blog_id FROM "accessibilities" JOIN "memberships" ON "memberships".group_id = "accessibilities".group_id WHERE "memberships".user_id IN (1))) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."name" = 'alice') LIMIT 1[0m
+  [4;35;1mUser Create (0.1ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('bob', '2009-01-09 13:39:45', '2009-01-09 13:39:45')[0m
+  [4;36;1mBlog Load (0.2ms)[0m   [0;1mSELECT * FROM "blogs" LIMIT 1[0m
+  [4;35;1mAccessibility Load (2.2ms)[0m   [0mSELECT "accessibilities".* FROM "accessibilities" JOIN "memberships" ON "memberships".group_id = "accessibilities".group_id WHERE ("memberships".user_id = 1) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."name" = 'alice') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('bob', '2009-01-09 13:39:45', '2009-01-09 13:39:45')[0m
+  [4;36;1mBlog Load (0.2ms)[0m   [0;1mSELECT * FROM "blogs" LIMIT 1[0m
+  [4;35;1mBlog Load (1.2ms)[0m   [0mSELECT * FROM "blogs" WHERE ("blogs".id IN (SELECT "accessibilities".blog_id FROM "accessibilities" JOIN "memberships" ON "memberships".group_id = "accessibilities".group_id WHERE "memberships".user_id IN (5))) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."name" = 'alice') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('bob', '2009-01-09 13:39:45', '2009-01-09 13:39:45')[0m
+  [4;36;1mBlog Load (0.3ms)[0m   [0;1mSELECT * FROM "blogs" LIMIT 1[0m
+  [4;35;1mAccessibility Load (0.1ms)[0m   [0mSELECT "accessibilities".* FROM "accessibilities" JOIN "memberships" ON "memberships".group_id = "accessibilities".group_id WHERE ("memberships".user_id = 6) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: schema_migrations: SELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('1')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "memberships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "group_id" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('2')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255)) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "accessibilities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "blog_id" integer, "group_id" integer) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "blogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('alice', '2009-01-09 13:52:52', '2009-01-09 13:52:52')[0m
+  [4;35;1mGroup Create (0.1ms)[0m   [0mINSERT INTO "groups" ("name") VALUES('collaborators')[0m
+  [4;36;1mBlog Create (0.2ms)[0m   [0;1mINSERT INTO "blogs" ("created_at", "title", "updated_at") VALUES('2009-01-09 13:52:52', 'My Blog', '2009-01-09 13:52:52')[0m
+  [4;35;1mAccessibility Create (0.2ms)[0m   [0mINSERT INTO "accessibilities" ("blog_id", "group_id") VALUES(1, 1)[0m
+  [4;36;1mMembership Create (0.5ms)[0m   [0;1mINSERT INTO "memberships" ("group_id", "user_id") VALUES(1, 1)[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."name" = 'alice') LIMIT 1[0m
+  [4;36;1mUser Create (0.1ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('bob', '2009-01-09 13:52:52', '2009-01-09 13:52:52')[0m
+  [4;35;1mBlog Load (0.2ms)[0m   [0mSELECT * FROM "blogs" LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."name" = 'alice') LIMIT 1[0m
+  [4;35;1mUser Create (0.1ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('bob', '2009-01-09 13:52:52', '2009-01-09 13:52:52')[0m
+  [4;36;1mBlog Load (0.2ms)[0m   [0;1mSELECT * FROM "blogs" LIMIT 1[0m
+  [4;35;1mBlog Load (1.8ms)[0m   [0mSELECT * FROM "blogs" WHERE ("blogs".id IN (SELECT "accessibilities".blog_id FROM "accessibilities" JOIN "memberships" ON "memberships".group_id = "accessibilities".group_id WHERE "memberships".user_id IN (1))) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."name" = 'alice') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('bob', '2009-01-09 13:52:52', '2009-01-09 13:52:52')[0m
+  [4;36;1mBlog Load (0.2ms)[0m   [0;1mSELECT * FROM "blogs" LIMIT 1[0m
+  [4;35;1mAccessibility Load (0.3ms)[0m   [0mSELECT "accessibilities".* FROM "accessibilities" JOIN "memberships" ON "memberships".group_id = "accessibilities".group_id WHERE ("memberships".user_id = 1) [0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."name" = 'alice') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('bob', '2009-01-09 13:52:52', '2009-01-09 13:52:52')[0m
+  [4;36;1mBlog Load (7.2ms)[0m   [0;1mSELECT * FROM "blogs" LIMIT 1[0m
+  [4;35;1mBlog Load (1.1ms)[0m   [0mSELECT * FROM "blogs" WHERE ("blogs".id IN (SELECT "accessibilities".blog_id FROM "accessibilities" JOIN "memberships" ON "memberships".group_id = "accessibilities".group_id WHERE "memberships".user_id IN (5))) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."name" = 'alice') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES('bob', '2009-01-09 13:52:52', '2009-01-09 13:52:52')[0m
+  [4;36;1mBlog Load (0.5ms)[0m   [0;1mSELECT * FROM "blogs" LIMIT 1[0m
+  [4;35;1mAccessibility Load (0.3ms)[0m   [0mSELECT "accessibilities".* FROM "accessibilities" JOIN "memberships" ON "memberships".group_id = "accessibilities".group_id WHERE ("memberships".user_id = 6) [0m
