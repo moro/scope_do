@@ -1,4 +1,5 @@
 require 'scope_do/named_acl'
+require 'scope_do/chained_scope'
 
 module ScopeDo
   VERSION = '0.0.1'
