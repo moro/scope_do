@@ -12,7 +12,7 @@ module ScopeDo
     module ClassMethods
       def named_acl(target, options={})
         t_klass = target.to_s.classify.constantize
-        self.acl_query_builder = Builder.new(self, t_klass, options)
+        self.acl_query_builder = Builder.new(self, target, options)
 
         define_accessible_scope(t_klass, acl_query_builder.query)
 
@@ -37,8 +37,9 @@ module ScopeDo
 
     private
     def load_accessibilities
-      Accessibility.find(:all, :joins => "JOIN #{acl_query_builder.join_on_group_id}",
-                               :conditions => ["#{Membership.quoted_table_name}.user_id = ?", self])
+      q = acl_query_builder
+      q.accessibility_klass.find(:all, :joins => "JOIN #{q.join_on_group_id}",
+                                       :conditions => ["#{q.where}", {q.label.to_sym=> self}])
     end
   end
 end
