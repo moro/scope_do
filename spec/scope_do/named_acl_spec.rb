@@ -12,7 +12,7 @@ describe ScopeDo::NamedAcl do
       named_acl :blogs
     end
 
-    User.delete_all
+    [Blog, User].each(&:delete_all)
     u = Factory(:user)
     b = Factory(:blog)
     b.accessibilities.map(&:group).first.users << u
