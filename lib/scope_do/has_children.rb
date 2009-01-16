@@ -1,6 +1,4 @@
-#!/usr/bin/env ruby
 # vim:set fileencoding=utf-8 filetype=ruby
-# $KCODE = 'u'
 
 module ScopeDo
   module HasChildren
@@ -8,26 +6,9 @@ module ScopeDo
       base.extend ClassMethods
     end
   end
-  module ClassMethods
-    def has_children(target)
-      association = reflections[target]
-      qs = has_children_query_parts(association)
 
-      named_scope "has_#{target}", proc{|*n|
-        {:conditions => has_children_condition(n.shift, qs)}
-      }
-    end
-
-    private
-    def has_children_query_parts(association)
-      if through = association.through_reflection
-        query_parts(self, through)
-      else
-        query_parts(self, association)
-      end
-    end
-
-    def has_children_condition(n, q)
+  class QueryBuilder
+    def self.has_children_condition(n, q)
       select_cols, rest = q
       if n
       "#{n} <= (SELECT COUNT(#{select_cols}) #{rest})"
@@ -36,6 +17,20 @@ module ScopeDo
       end
     end
 
+    def initialize(base, association)
+      @base = base
+      @association = association
+    end
+
+    def has_children_query_parts
+      if through = @association.through_reflection
+        query_parts(@base, through)
+      else
+        query_parts(@base, @association)
+      end
+    end
+
+    private
     def query_parts(parent, association)
       child_t = association.quoted_table_name
       parent_t = parent.quoted_table_name
@@ -43,6 +38,18 @@ module ScopeDo
         "#{child_t}.#{association.primary_key_name}",
         "FROM #{child_t} WHERE #{parent_t}.#{parent.primary_key} = #{child_t}.#{association.primary_key_name}"
       ]
+    end
+  end
+
+  module ClassMethods
+    def has_children(target)
+      association = reflections[target]
+      builder = QueryBuilder.new(self, association)
+      qs = builder.has_children_query_parts
+
+      named_scope "has_#{target}", proc{|*n|
+        {:conditions => QueryBuilder.has_children_condition(n.shift, qs)}
+      }
     end
   end
 end
