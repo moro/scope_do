@@ -8,17 +8,18 @@ require 'rake/rdoctask'
 require 'rake/contrib/rubyforgepublisher'
 require 'rake/contrib/sshpublisher'
 require 'fileutils'
-require 'lib/scope_do'
 
-require 'spec'
+$:.unshift "lib"
+require 'scope_do'
+
+require 'spec/rake/spectask'
 include FileUtils
 
 NAME              = "scope_do"
 AUTHOR            = "MOROHASHI Kyosuke"
 EMAIL             = "moronatural@gmail.com"
-DESCRIPTION       = ""
-RUBYFORGE_PROJECT = "scope_do"
-HOMEPATH          = "http://#{RUBYFORGE_PROJECT}.rubyforge.org"
+DESCRIPTION       = "named_scope utilities."
+HOMEPATH          = "http://github.com/moro/scope_do/tree/master"
 BIN_FILES         = %w(  )
 
 VERS              = ScopeDo::VERSION
@@ -36,10 +37,10 @@ RDOC_OPTS = [
 task :default => [:test]
 task :package => [:clean]
 
-Rake::TestTask.new("test") do |t|
-	t.libs   << "test"
-	t.pattern = "test/**/*_test.rb"
-	t.verbose = true
+desc "Run all specs in spec directory"
+Spec::Rake::SpecTask.new(:spec) do |t|
+  t.spec_opts = %w[--colour --format progress --loadby --reverse]
+  t.spec_files = FileList['spec/**/*_spec.rb']
 end
 
 spec = Gem::Specification.new do |s|
@@ -55,17 +56,13 @@ spec = Gem::Specification.new do |s|
 	s.email             = EMAIL
 	s.homepage          = HOMEPATH
 	s.executables       = BIN_FILES
-	s.rubyforge_project = RUBYFORGE_PROJECT
-	s.bindir            = "bin"
+	s.bindir            = "bin" unless BIN_FILES.empty?
 	s.require_path      = "lib"
-	#s.autorequire       = ""
-	s.test_files        = Dir["test/*_test.rb"]
-
-	#s.add_dependency('activesupport', '>=1.3.1')
-	#s.required_ruby_version = '>= 1.8.2'
+	s.test_files        = Dir["spec/**/*_spec.rb"]
 
 	s.files = %w(README ChangeLog Rakefile) +
 		Dir.glob("{bin,doc,test,lib,templates,generator,extras,website,script}/**/*") + 
+		Dir.glob("spec/**/*.rb") +
 		Dir.glob("ext/**/*.{h,c,rb}") +
 		Dir.glob("examples/**/*.rb") +
 		Dir.glob("tools/*.rb") +
