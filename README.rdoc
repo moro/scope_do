@@ -1,0 +1,103 @@
+
+= scope_do
+
+named_scope utilities.
+
+== Description
+
+scope_do is a tiny utilities to define useful named_scope.
+scope_do provides
+
+- named_acl : enable User - Group - Target style access control list.
+- chained_scope : enable defined named_scope method chain.
+- has_children  : define scope to load child records
+
+== Installation
+
+=== Archive Installation
+
+	rake install
+
+=== Gem Installation
+
+	gem install scope_do
+
+
+== Features/Problems
+=== named_acl
+named_acl provides Target.accessible_by(users) scope that load target model accessible by the user.
+And also provides User#accessible_#{target} methods which call Target.accessible_by(self).
+
+ class User < ActiveRecord::Base
+   scope_do :named_acl
+   named_acl :blogs
+ end
+
+now you write below in controller.
+
+ class BlogsController < ApplicationCotnroller
+   def index
+     @blogs = current_user.accessible_blogs
+     # or method chain
+     # @blogs = current_user.accessible_blogs.find_by_keyword(params[:keyword])
+   end
+ end
+
+=== chained_scope
+chained_scope provides named_scope macro that skip condition when all args are blank.
+and it enable named_scope method-chainable.
+
+ class Blog < ActiveRecord::Base
+   scope_do :chained_scope
+   named_scope :title_like, proc{|part|
+     {:conditions => ["#{quoted_table_name}.title LIKE ?", "%#{part}%"]}
+   }
+   ...and more...
+
+   chainable_scope :title_like
+ end
+
+without chained_scope, you must write below (or reject blank in each scope)
+
+ def index # In some controller
+   @blogs = Blog.some_scope
+   @blogs = @blogs.title_like(params[:q]) unless params[:q].blank?
+   @blogs = @blogs.month_in(params[:month]) unless params[:month].blank?
+   ...
+   @blogs = scope.find(:all, ...)
+ end
+
+chained_scope enable below style
+
+ def index # In some controller
+   @blogs = Blog.some_scope.
+              title_like(params[:q]).
+              month_in(params[:month]).
+              find(:all, ...)
+ end
+
+=== has_children
+define scope that have children records.
+
+ class Blog < ActiveRecord::Base
+   scope_do :has_children
+   has_many :entries
+   has_children :entries
+ end
+
+add "has_entries" scope that have one or more entries.
+
+ Blog.has_entries.all?{|b| not b.entries.blank? }  # => true
+
+"has_entires" also accept children numbers
+
+ Blog.has_entries(2).all?{|b| b.entries.size >= 2 }  # => true
+
+== Synopsis
+see spec/**/*_spec.rb
+
+== Copyright
+
+Author::    MOROHASHI Kyosuke <moronatural@>gmail.com
+Copyright:: Copyright (c) 2009 MOROHASHI Kyosuke
+License:: MIT

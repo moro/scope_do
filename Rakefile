@@ -48,7 +48,7 @@ spec = Gem::Specification.new do |s|
 	s.version           = VERS
 	s.platform          = Gem::Platform::RUBY
 	s.has_rdoc          = true
-	s.extra_rdoc_files  = ["README", "ChangeLog"]
+	s.extra_rdoc_files  = ["README.rdoc", "ChangeLog"]
 	s.rdoc_options     += RDOC_OPTS + ['--exclude', '^(examples|extras)/']
 	s.summary           = DESCRIPTION
 	s.description       = DESCRIPTION
@@ -60,7 +60,7 @@ spec = Gem::Specification.new do |s|
 	s.require_path      = "lib"
 	s.test_files        = Dir["spec/**/*_spec.rb"]
 
-	s.files = %w(README ChangeLog Rakefile) +
+	s.files = %w(README.rdoc ChangeLog Rakefile) +
 		Dir.glob("{bin,doc,test,lib,templates,generator,extras,website,script}/**/*") + 
 		Dir.glob("spec/**/*.rb") +
 		Dir.glob("ext/**/*.{h,c,rb}") +
@@ -95,7 +95,7 @@ Rake::RDocTask.new do |rdoc|
 	if ENV['DOC_FILES']
 		rdoc.rdoc_files.include(ENV['DOC_FILES'].split(/,\s*/))
 	else
-		rdoc.rdoc_files.include('README', 'ChangeLog')
+		rdoc.rdoc_files.include('README.rdoc', 'ChangeLog')
 		rdoc.rdoc_files.include('lib/**/*.rb')
 		rdoc.rdoc_files.include('ext/**/*.c')
 	end
