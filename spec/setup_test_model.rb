@@ -50,6 +50,17 @@ class Blog < ActiveRecord::Base
     t.timestamps
   end
   has_many :accessibilities
+  has_many :entries
+end
+
+class Entry < ActiveRecord::Base
+  define_table do |t|
+    t.string "title"
+    t.text   "body"
+    t.belongs_to "blog"
+  end
+
+  belongs_to :blog
 end
 
 Factory.define(:group) do |g|
@@ -67,5 +78,10 @@ end
 
 Factory.define(:user) do |u|
   u.name "alice"
+end
+
+Factory.define(:entry) do |e|
+  e.title "My Entry"
+  e.body  "!!! Body of the entry. !!!"
 end
 

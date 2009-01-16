@@ -6,7 +6,7 @@ module ScopeDo
   module Adapter
     def scope_do *functions
       functions.each do |function|
-        module_name = function.to_s.classify
+        module_name = function.to_s.camelize
         include ScopeDo.const_get(module_name)
       end
     end
