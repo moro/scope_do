@@ -7,8 +7,6 @@ module ScopeDo
       base.cattr_accessor :acl_query_builder
     end
 
-    #named_scope :has_pages, {:conditions => "EXISTS(SELECT lx.page_id FROM label_indexings AS lx WHERE #{quoted_table_name}.id = lx.label_index_id)"}
-
     module ClassMethods
       def named_acl(target, options={})
         t_klass = target.to_s.classify.constantize
