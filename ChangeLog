@@ -1,4 +1,8 @@
-== 0.0.1 / 2009-01-09
+== 0.1.1 / 2009-02-18
+* [FEATURE] add free_or_accessible scope
+* [BUG] fixed hard-coded blog_id in User#accessible?
+
+== 0.1.0 / 2009-01-09
 
 * initial release
 
