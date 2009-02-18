@@ -30,7 +30,9 @@ module ScopeDo
 
     def accessible?(record)
       @accessibilities ||= load_accessibilities
-      @accessibilities.any?{|a| a.blog_id == record.id }
+
+      fk = acl_query_builder.accessibility_target_id(false)
+      @accessibilities.any?{|a| a[fk] == record.id }
     end
 
     private

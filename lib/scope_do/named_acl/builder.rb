@@ -23,8 +23,12 @@ module ScopeDo
         "SELECT #{accessibility_target_id} FROM #{from} JOIN #{join_on_group_id} WHERE #{where}"
       end
 
-      def accessibility_target_id
-        "#{@accessibility.quoted_table_name}.#{@target.association_foreign_key}"
+      def accessibility_target_id(with_table_name = true)
+        if with_table_name
+          "#{@accessibility.quoted_table_name}.#{@target.association_foreign_key}"
+        else
+          @target.association_foreign_key
+        end
       end
 
       def where

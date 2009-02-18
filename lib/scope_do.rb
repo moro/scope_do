@@ -2,7 +2,7 @@ require 'scope_do/named_acl'
 require 'scope_do/chained_scope'
 
 module ScopeDo
-  VERSION = '0.1.0'
+  VERSION = '0.1.1'
   module Adapter
     def scope_do *functions
       functions.each do |function|
