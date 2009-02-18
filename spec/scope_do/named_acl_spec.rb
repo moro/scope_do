@@ -7,6 +7,9 @@ require 'scope_do/named_acl'
 
 describe ScopeDo::NamedAcl do
   before(:all) do
+    ::Blog.class_eval do
+      named_scope :free, :conditions => ["public = ?", true]
+    end
     ::User.class_eval do
       scope_do :named_acl
       named_acl :blogs
@@ -38,6 +41,10 @@ describe ScopeDo::NamedAcl do
 
   it "bob.accessible_blogs should not include @blog" do
     @bob.accessible_blogs.should_not include(@blog)
+  end
+
+  it "bob.free_or_accessible_blogs should not include @blog" do
+    @bob.free_or_accessible_blogs.should include(@blog)
   end
 
   it "bob should not be accessible @blog" do

@@ -47,6 +47,7 @@ end
 class Blog < ActiveRecord::Base
   define_table do |t|
     t.string   "title"
+    t.boolean  "public"
     t.timestamps
   end
   has_many :accessibilities
@@ -73,6 +74,7 @@ end
 
 Factory.define(:blog) do |b|
   b.title "My Blog"
+  b.public true
   b.accessibilities{|as| [Factory.build(:accessibility)] }
 end
 
