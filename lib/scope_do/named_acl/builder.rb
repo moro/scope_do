@@ -19,8 +19,8 @@ module ScopeDo
         @accessibility.klass
       end
 
-      def query
-        "SELECT #{accessibility_target_id} FROM #{from} JOIN #{join_on_group_id} WHERE #{where}"
+      def query(target_id)
+        "SELECT * FROM #{from} JOIN #{join_on_group_id} WHERE #{where} AND #{accessibility_target_id} = #{target_id}"
       end
 
       def accessibility_target_id(with_table_name = true)
