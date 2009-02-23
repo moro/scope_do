@@ -62,6 +62,16 @@ class Entry < ActiveRecord::Base
   end
 
   belongs_to :blog
+  has_one :publication
+end
+
+class Publication < ActiveRecord::Base
+  define_table do |t|
+    t.timestamp :published_at
+    t.belongs_to :entry
+  end
+
+  belongs_to :entry
 end
 
 Factory.define(:group) do |g|
